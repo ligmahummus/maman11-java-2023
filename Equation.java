@@ -26,15 +26,21 @@ public class Equation {
         // Assign the third in order input to the c variable
         c = scan.nextDouble();
 
+        // Calculate the delta of the discriminant
         double delta = Math.pow(b, 2) - 4 * a * c;
 
+        // Condition that checks if delta is less than 0 or equal to 0 or greater than 0
+        // Then appropiately prints the correct message to the user
         if (delta < 0) {
             System.out.println("There is no solution.");
         } else if (delta == 0) {
             double x1 = -b / (2 * a);
             System.out.println("There is 1 solution. X1 = " + x1 + ".");
         } else {
+            // Calculate the roots of the equation
             double x1 = (-b + Math.sqrt(delta)) / (2 * a);
+
+            // Calculate the roots of the equation
             double x2 = (-b - Math.sqrt(delta)) / (2 * a);
             System.out.println("There are 2 solutions. X1 = " + x1 + ", X2 = "
                     + x2 + ".");
