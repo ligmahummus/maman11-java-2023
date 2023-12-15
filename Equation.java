@@ -10,6 +10,7 @@ public class Equation {
     public static void main(String[] args) {
         // Declare variables
         double a, b, c;
+        double x1, x2;
 
         // Assign a new scanner object
         Scanner scan = new Scanner(System.in);
@@ -34,14 +35,14 @@ public class Equation {
         if (delta < 0) {
             System.out.println("There is no solution.");
         } else if (delta == 0) {
-            double x1 = -b / (2 * a);
+            x1 = -b / (2 * a);
             System.out.println("There is 1 solution. X1 = " + x1 + ".");
         } else {
             // Calculate the roots of the equation
-            double x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            x1 = (-b + Math.sqrt(delta)) / (2 * a);
 
             // Calculate the roots of the equation
-            double x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            x2 = (-b - Math.sqrt(delta)) / (2 * a);
             System.out.println("There are 2 solutions. X1 = " + x1 + ", X2 = "
                     + x2 + ".");
         }
