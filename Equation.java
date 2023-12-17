@@ -10,7 +10,6 @@ public class Equation {
     public static void main(String[] args) {
         // Declare variables
         double a, b, c;
-        double x1, x2;
 
         // Assign a new scanner object
         Scanner scan = new Scanner(System.in);
@@ -27,22 +26,33 @@ public class Equation {
         // Assign the third in order input to the c variable
         c = scan.nextDouble();
 
-        // Calculate the delta of the discriminant
         double delta = Math.pow(b, 2) - 4 * a * c;
 
-        // Condition that checks if delta is less than 0 or equal to 0 or greater than 0
-        // Then appropiately prints the correct message to the user
         if (delta < 0) {
             System.out.println("There is no solution.");
         } else if (delta == 0) {
-            x1 = -b / (2 * a);
+            double x1 = -b / (2 * a);
+
+            // Check if the result is -0.0 and if so, change it to 0, else, keep it as is
+            if (x1 == -0.0) {
+                x1 = 0;
+            }
+
             System.out.println("There is 1 solution. X1 = " + x1 + ".");
         } else {
-            // Calculate the roots of the equation
-            x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            double x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            double x2 = (-b - Math.sqrt(delta)) / (2 * a);
 
-            // Calculate the roots of the equation
-            x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            // Check if the result is -0.0 and if so, change it to 0, else, keep it as is
+            if (x1 == -0.0) {
+                x1 = 0;
+            }
+
+            // Check if the result is -0.0 and if so, change it to 0, else, keep it as is
+            if (x2 == -0.0) {
+                x2 = 0;
+            }
+
             System.out.println("There are 2 solutions. X1 = " + x1 + ", X2 = "
                     + x2 + ".");
         }
